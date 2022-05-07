@@ -1,6 +1,6 @@
 var palavras = ["abacaxi", "goiaba", "aeroporto", "ventilador", "macaco", "garrafa", "girafa", "computador", "forca", "chave", "beber", "cabelo", "janela"];
 
-// Aleatorizar o número dos índices
+// Aleatorizar o número dos índices entre 0 e 12 (Porque o array contém 13 valores).
 min = Math.ceil(0);
 max = Math.floor(palavras.length - 1);
 var numero_aleatorio = Math.floor(Math.random() * (max - min)) + min;
@@ -44,6 +44,7 @@ while (vida_personagem > 0) {
         console.log("Você perdeu uma vida");
         console.log("Vidas restantes: " + vida_personagem)
     } else{
+        console.log("Letra escolhida: " + letra_escolhida);
         console.log("Achou uma letra!");
     }
 
@@ -58,7 +59,7 @@ while (vida_personagem > 0) {
 }
     
 if(vida_personagem >0){
-    console.log("Parabéns você acertou, a palavra é: " + palavra_secreta);
+    console.log("Parabéns você acertou! =) \nA palavra é: " + palavra_secreta);
 } else {
-    console.log("Você perdeu =( \nA palavra era: " + palavra_secreta + ".")
+    console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".")
 }
