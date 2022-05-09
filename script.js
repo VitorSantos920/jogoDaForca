@@ -5,6 +5,7 @@ min = Math.ceil(0);
 max = Math.floor(palavras.length - 1);
 var numero_aleatorio = Math.floor(Math.random() * (max - min)) + min;
 
+
 // Números de vida == Quantidade de caracteres da palavra
 var vida_personagem = palavras[numero_aleatorio].length;
 
@@ -23,9 +24,10 @@ for (var contador = 0; contador < quantidade_letras; contador ++) {
 console.log("Dica: A palavra possui " + palavra_secreta.length + " letras");
 
 
-var achou = false;
+var achou;
 var letra_escolhida = "";
-while (vida_personagem > 0) { 
+while (vida_personagem > 0 && array.includes("_")) { 
+    achou = false;
     letra_escolhida = prompt("Digite uma letra: ");
 
     if(letra_escolhida == "sair"){
@@ -42,24 +44,17 @@ while (vida_personagem > 0) {
     if(achou == false){
         vida_personagem--;
         console.log("Você perdeu uma vida");
-        console.log("Vidas restantes: " + vida_personagem)
+        console.log("Vidas restantes: " + vida_personagem);
     } else{
         console.log("Letra escolhida: " + letra_escolhida);
         console.log("Achou uma letra!");
     }
 
-    achou = false
-    console.log(array.join(" "))
-
-    if(array.includes("_") == false){
-        break;
-    }
-
-    console.log(" ")
+    console.log(array.join(" ") + "\n");
 }
     
-if(vida_personagem >0){
+if(vida_personagem > 0){
     console.log("Parabéns você acertou! =) \nA palavra é: " + palavra_secreta);
 } else {
-    console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".")
+    console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".");
 }
