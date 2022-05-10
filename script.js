@@ -1,13 +1,9 @@
-// PARTE INICIAL
-var palavras = ["abacaxi", "goiaba", "aeroporto", "ventilador", "macaco", "garrafa", "girafa", "computador", "forca", "chave", "beber", "cabelo", "janela"];
+var palavras = ["doctype", "script", "javascript", "logica", "loops", "condicionais", "algoritmo", "fluxograma", "string", "inteiro", "variaveis", "booleano", "concatenacao", "operadores", "programacao", "sintaxe", "prompt", "alert", "array", "funcao", "console", "debugger", "body", "head", "atributos", "length", "includes", "parsefloat", "title"];
 
-// Aleatorizar o número dos índices entre 0 e 12 (Porque o array contém 13 valores).
 min = Math.ceil(0);
 max = Math.floor(palavras.length - 1);
 var numero_aleatorio = Math.floor(Math.random() * (max - min)) + min;
 
-
-// Números de vida == Quantidade de caracteres da palavra
 var vida_personagem = palavras[numero_aleatorio].length;
 
 var palavra_secreta = palavras[numero_aleatorio];
@@ -15,17 +11,13 @@ var quantidade_letras = palavra_secreta.length;
 
 alert("Bem vindo ao Jogo da Forca =) \nCaso não queira jogar digite 'sair'");
 
-
-// Enche a array de underline
 var array = [];
 for (var contador = 0; contador < quantidade_letras; contador ++) { 
     array[contador] = "_";
 }
 
-console.log("Dica: A palavra possui " + palavra_secreta.length + " letras");
-// FIM PARTE INICIAL
+console.log("Dica: A palavra possui " + palavra_secreta.length + " letras\n\n");
 
-// PARTE INTERMEDIÁRIA
 var achou;
 var letra_escolhida = "";
 while (vida_personagem > 0 && array.includes("_")) { 
@@ -45,21 +37,19 @@ while (vida_personagem > 0 && array.includes("_")) {
 
     if(achou == false){
         vida_personagem--;
-        console.log("Você perdeu uma vida");
-        console.log("Vidas restantes: " + vida_personagem);
+        console.log("\nLETRA ESCOLHIDA: " + letra_escolhida + "\n");
+        console.log("Esta letra não existe na palavra, tente de novo!");
+        console.log("Você perdeu uma vida!\n");
+        console.log("Vidas restantes: " + vida_personagem + "\n\n");
     } else{
-        console.log("Letra escolhida: " + letra_escolhida);
-        console.log("Achou uma letra!");
+        console.log("LETRA ESCOLHIDA: " + letra_escolhida);
+        console.log("Boa, achou uma letra, vá em frente!\n\n");
     }
-
-    console.log(array.join(" ") + "\n");
+    console.log(array.join(" ") + "\n\n");
 }
-// FIM PARTE INTERMEDIÁRIA
 
-// PARTE FINAL
 if(vida_personagem > 0){
     console.log("Parabéns você acertou! =) \nA palavra é: " + palavra_secreta);
 } else {
     console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".");
 }
-// FIM PARTE FINAL
