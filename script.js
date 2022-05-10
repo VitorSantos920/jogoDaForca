@@ -1,3 +1,4 @@
+// PARTE INICIAL
 var palavras = ["abacaxi", "goiaba", "aeroporto", "ventilador", "macaco", "garrafa", "girafa", "computador", "forca", "chave", "beber", "cabelo", "janela"];
 
 // Aleatorizar o número dos índices entre 0 e 12 (Porque o array contém 13 valores).
@@ -22,8 +23,9 @@ for (var contador = 0; contador < quantidade_letras; contador ++) {
 }
 
 console.log("Dica: A palavra possui " + palavra_secreta.length + " letras");
+// FIM PARTE INICIAL
 
-
+// PARTE INTERMEDIÁRIA
 var achou;
 var letra_escolhida = "";
 while (vida_personagem > 0 && array.includes("_")) { 
@@ -52,9 +54,12 @@ while (vida_personagem > 0 && array.includes("_")) {
 
     console.log(array.join(" ") + "\n");
 }
-    
+// FIM PARTE INTERMEDIÁRIA
+
+// PARTE FINAL
 if(vida_personagem > 0){
     console.log("Parabéns você acertou! =) \nA palavra é: " + palavra_secreta);
 } else {
     console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".");
 }
+// FIM PARTE FINAL
