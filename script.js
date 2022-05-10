@@ -1,4 +1,4 @@
-var palavras = ["doctype", "script", "javascript", "logica", "loops", "condicionais", "algoritmo", "fluxograma", "string", "inteiro", "variaveis", "booleano", "concatenacao", "operadores", "programacao", "sintaxe", "prompt", "alert", "array", "funcao", "console", "debugger", "body", "head", "atributos", "length", "includes", "parsefloat", "title"];
+var palavras = ["doctype", "script", "javascript", "logica", "loops", "condicionais", "algoritmo", "fluxograma", "string", "inteiro", "variaveis", "booleano", "concatenacao", "operadores", "programacao", "sintaxe", "prompt", "alert", "array", "funcao", "console", "debugger", "body", "head", "atributos", "length", "includes", "parsefloat", "title", "identacao"];
 
 min = Math.ceil(0);
 max = Math.floor(palavras.length - 1);
@@ -25,6 +25,7 @@ while (vida_personagem > 0 && array.includes("_")) {
     letra_escolhida = prompt("Digite uma letra: ");
 
     if(letra_escolhida == "sair"){
+        console.log("Saiu? Poxa, tudo bem então...")
         break;
     }
 
@@ -34,22 +35,24 @@ while (vida_personagem > 0 && array.includes("_")) {
             achou = true;
         }
     }
+    
+    console.log("\nLETRA ESCOLHIDA: " + letra_escolhida + "\n");
 
     if(achou == false){
         vida_personagem--;
-        console.log("\nLETRA ESCOLHIDA: " + letra_escolhida + "\n");
         console.log("Esta letra não existe na palavra, tente de novo!");
         console.log("Você perdeu uma vida!\n");
         console.log("Vidas restantes: " + vida_personagem + "\n\n");
     } else{
-        console.log("LETRA ESCOLHIDA: " + letra_escolhida);
         console.log("Boa, achou uma letra, vá em frente!\n\n");
     }
     console.log(array.join(" ") + "\n\n");
 }
 
-if(vida_personagem > 0){
+if(vida_personagem > 0 && array.includes("_") == false){
     console.log("Parabéns você acertou! =) \nA palavra é: " + palavra_secreta);
-} else {
+} else if(letra_escolhida == "sair"){
+    console.log("Por isso, não vou revelar a #PalavraSecreta! =)");
+} else{
     console.log("Você perdeu! =( \nA palavra era: " + palavra_secreta + ".");
 }
